@@ -17,7 +17,7 @@ export class WebsocketService {
 	  
 	var userId: any = '';
 	if(this.token.getUser()){
-		userId = this.token.getUser().user.uid;
+		//userId = this.token.getUser().user.uid;
 	}
     // If you aren't familiar with environment variables then
     // you can hard code `environment.ws_url` as `http://localhost:5000`

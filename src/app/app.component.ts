@@ -21,15 +21,15 @@ export class AppComponent {
 	
 	constructor(private api: BaseService, private ev: EventsService, cookieService: CookieService, private tokenStorageService: TokenStorageService, private auth: AuthService, private wsClient: WebsocketService) {
 		
-		wsClient.connect((ws: any)=>{
+		/*wsClient.connect((ws: any)=>{
 			wsClient.on('updatePaymentStatus', (data:any)=>{
 				this.ev.trigger('updatePaymentStatus', data);
 			})
 		});
-			
-				
+							
 		if(!cookieService.get('_session')){
 			this.api.get('config').subscribe(result =>{
+				try{
 				const { name, value } = result.cookies;
 				if(name && value){
 					cookieService.set('_session', value);
@@ -38,8 +38,11 @@ export class AppComponent {
 				if(result.viewstate){
 					localStorage.setItem('viewstate', result.viewstate);
 				}
+			}catch(e){}
+
+
 			 });
-		}
+		}*/
 		this.isLoggedIn = !this.tokenStorageService.getToken();
 		this.getMe();
 		this.ev.on('logout', (data: any) => {
@@ -62,21 +65,18 @@ export class AppComponent {
 	}
 	
 	getMe(){
-		//this.ev.trigger('showLoader', true);
-		this.auth.me().subscribe((result: any) =>{
-			//this.ev.trigger('showLoader', false);
-			console.log(result)
-			if(result.success == false || result.logout == false){
-				this.ev.trigger('logout', true);
-				return;
-			}
-			this.tokenStorageService.saveUser(result);
+		this.ev.trigger('showLoader', true);
+		let me = this.auth.me();
+		console.log('Eu', me)
+		if(me){
+			this.ev.trigger('showLoader', false);
 			this.ev.trigger('logon', true);
 			this.ev.trigger('updateAccountInfo', true);
-		},
-        (error: any) => {                              //Error callback
-          //this.ev.trigger('logout', true);
-        });
+		}else{
+			setTimeout(()=>{
+			this.ev.trigger('showLoader', false);
+			},500);
+		}
 	}
 	
 	load(){

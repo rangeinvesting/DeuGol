@@ -3,6 +3,8 @@ import { HeaderComponent } from './../../components/header/header.component';
 import { FeaturedBannerComponent } from './../../components/featured-banner/featured-banner.component';
 import { TableGameComponent } from './../../components/table-game/table-game.component';
 import { TableFeaturedGameComponent } from './../../components/table-featured-game/table-featured-game.component';
+import { FeaturedGamesComponent } from './../../components/games/featured-games/featured-games.component';
+import { BolaoComponent } from './../../components/games/cards/bolao/bolao.component';
 import { BaseService } from './../../services/api/base.service';
 import { CookieService } from 'ngx-cookie-service';
 import { TokenStorageService } from './../../services/utils/token-storage.service';
@@ -22,16 +24,21 @@ export class HomeComponent implements OnInit {
 	title = 'DeuGol';
 	settings: any = [];
 	isLoggedIn: boolean = false;
+
 	
 	constructor(private api: BaseService, cookieService: CookieService, private tokenStorageService: TokenStorageService, private ev: EventsService) {
-		if(!cookieService.get('_session')){
+		/*if(!cookieService.get('_session')){
 			this.api.get('config').subscribe(result =>{
+				try{
 				const { name, value } = result.cookies;
 				if(name && value){
 					cookieService.set('_session', value);
 				}
+				}catch(e){
+					
+				}
 			 });
-		}
+		}*/
 
 		this.isLoggedIn = !!this.tokenStorageService.getToken();
 	}

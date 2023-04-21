@@ -30,6 +30,10 @@ export class ListComponent implements OnInit {
 		  })
 	  }
   }
+
+  convertTimeStampToDate(date: any){
+  	return new Date(date.seconds * 1000); 
+  }
 	
   transactionsList(data: any){
 	  return data.sort((a: any, b: any) => b.createdAt - a.createdAt);

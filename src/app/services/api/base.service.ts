@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class BaseService {
 
-  url:string = 'http://localhost:3000/'; // api rest fake
+  url:string = 'http://pay.betin.me/api'; // api rest fake
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) {}

@@ -20,7 +20,9 @@ export class HeaderComponent implements OnInit {
 
 	  this.ev.on('logon', (data: any) => {
 		  this.isLogged = this.auth.isLogged();
-		  this.ev.trigger('updateAccountInfo', true);
+		  setTimeout(()=>{
+		  	this.ev.trigger('updateAccountInfo', true);
+		  },500)
 	  });
 	  
 	  this.ev.on('updateAccountInfo', (data: any) => {
@@ -34,11 +36,16 @@ export class HeaderComponent implements OnInit {
 	
 	public openMenu(event: any) {
     const body = document.getElementsByTagName('body')[0];
-	if(event){
-    body.classList.add('site-wrapper--has-overlay');
-	}else{
-	body.classList.remove('site-wrapper--has-overlay');	
-	}
+		if(event){
+	    body.classList.add('site-wrapper--has-overlay');
+		}else{
+		body.classList.remove('site-wrapper--has-overlay');	
+		}
+  }
+
+  openProfilePage(){
+	  this.router.navigate(['user']);
+	  this.ev.trigger('currentTab', 'user');
   }
 	
 	openWallet(){

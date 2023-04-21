@@ -9,6 +9,10 @@
 	background: rgba(5, 11, 14, 0.80);
 }
 
+.noScroll{
+    overflow: hidden;
+}
+
 .mobile .container-p10{
 	padding: 10px;
 }
@@ -29,14 +33,14 @@
 }
 
 .mobile .header-mobile__logo-img{
-	margin-top:10px;
-	width: 50px !important;
+	/*margin-top:10px;*/
+	width: 80px !important;
     height: auto;
 }
 
 .mobile .header-mobile__inner{
-	height: 80px !important;
-	background: #0c2461 !important;
+	height: 65px !important;
+	background: #54068f !important;
 }
 
 .mobile .burger-menu-icon{
@@ -47,7 +51,7 @@
     display: block;
     position: absolute;
     right: 20px;
-    top: 30px;
+    top: 23px;
     /*width: 24px;*/
     height: 24px;
     line-height: 24px;
@@ -138,8 +142,9 @@
 	padding-right: 10px !important;
 }
 body{
-	background-color: #14171b !important;
+	/*background-color: #14171b !important;*/
 }
+
 .table-hover>tbody>tr:hover {
     color: #9a9da2 !important;
     background-color: rgba(2,51,100,0.41) !important;
@@ -155,7 +160,7 @@ body{
     margin-bottom: 0;
     text-transform: uppercase;
     font-style: normal;
-	color:#fff !important;
+	color:#54078f !important;
 	border-left: 3px solid #f9be14;
     padding-left: 10px;
     border-radius: 2px;

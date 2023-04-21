@@ -6,6 +6,10 @@ import { BaseService } from '../api/base.service';
 import { EventsService } from '../utils/events.service';
 import { TokenStorageService } from '../utils/token-storage.service';
 import { Router } from '@angular/router';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/compat/firestore';
 
 const AUTH_API = 'http://localhost:8080/api/auth/';
 
@@ -18,14 +22,13 @@ const httpOptions: any = {
 })
 export class TransactionsService  {
 
-  constructor(private router: Router, private api: BaseService, private token: TokenStorageService, private ev: EventsService) { }
+  constructor(private router: Router, public afs: AngularFirestore, private api: BaseService, private token: TokenStorageService, private ev: EventsService) { }
 	
 	transactions(): Observable<any> {
 	
-	const { wallet } = this.token.getUser();
-    return this.api.get(`wallet/${wallet.id}/transactions`, httpOptions).pipe(map((data:any[])=>{
-	  	return data;
-	  }));
+	const { user } = this.token.getUser();
+
+	  return this.afs.collection(`transactions`, ref => ref.where('useruid','==', user.uid)).valueChanges();
 		
   	}
 	

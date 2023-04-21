@@ -13,7 +13,7 @@ div.tab-nav div.tab-item{
 	display:inline-block;
 	width:33.33%;
 	height:60px;
-	background: #0c2461;
+	background: #54078f;
 	text-align:center;
 	padding-top:10px;	
 }
@@ -33,7 +33,7 @@ div.tab-nav div.tab-item .label{
 }
 
 div.tab-nav div.tab-item.active{
-    background: url(https://deugolapp.run-us-west2.goorm.io/assets/download.svg);
+    background: url(/assets/download.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
@@ -54,7 +54,7 @@ div.tab-nav div.tab-item.active .label{
 div.tab-nav div.tab-item.active:before, div.tab-nav div.tab-item.active:after{
 	content: '';
     display: block;
-    background: #0c2461;
+    background: #54078f;
     width: 100px;
     height: 60px;
     position: absolute;

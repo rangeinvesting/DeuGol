@@ -1,6 +1,6 @@
 #balanceCard {
 	margin-bottom:10px;
-	margin:15px;
+	/*margin:15px;*/
 	min-height: 120px;
 	border-radius:10px;
 }
@@ -29,12 +29,12 @@
 #balanceCard .widget__content .balance{
 	font-size: 40px;
     font-weight: normal;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .balance-card-bottom{
 	padding: 10px;
-    background: #1c1e22;
+    background: rgb(28 30 34 / 55%);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -45,7 +45,7 @@
 
 #btnDeposit{
 	color: #000;
-    background-color: #8bc34a;
+    background-color: #f7c107;
     border-color: transparent;
 	font-size: 11px;
     padding: 7px 20px;
@@ -59,4 +59,9 @@
     padding: 7px 20px;
     font-weight: bold;
 	margin-left:5px;
+}
+
+#balanceCard.bg-gradient {
+    background: linear-gradient(#54078f,#2f0450) !important;
+    transition: background 1s ease-out !important;
 }

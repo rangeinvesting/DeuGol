@@ -1,43 +1,4 @@
-<div class="container" id="moneytransfer">
-  <h1>Customer Money Transaction</h1>
-  <div id="alerting" class="alert alert-warning alert-dismissible fade show" role="alert" style="display:none;">
-    <p id="message" >....</p>
-    <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="showAlertChanged()">
-      <span aria-hidden="true">&times;</span>
-    </button> -->
-  </div>
-    <form 
-    method="POST" >
-    <div class="form-row">
-      <div class="form-group col-md-6" >
-            <label for="typeOfTransaction">Type of Transaction</label>
-            <select class="form-control" required  name="Select Transaction type">
-                 <option>none</option>
-              <option >Debit</option>
-              
-            </select>
-      </div>
-      
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="toAccountId">To Account Number</label>
-        <input 
-        type="number" 
-        class="form-control" 
-        required
-        name="toAccountId" 
-        placeholder="Select Account Id to credit">
-       </div>
-      <div class="form-group col-md-6">
-        <label for="transactionAmount">Transaction Amount</label>
-        <input type="number" 
-        class="form-control" 
-        required
-        name="transactionAmount" 
-        placeholder="Enter Transaction Amount">
-      </div>
-    </div>
-    <button type="submit" class="submit">Transfer</button>
-  </form>
-  </div>
+<header-common pageTitle="Depositar"></header-common>
+<div class="wallet-content">
+  <transactions-deposit></transactions-deposit>
+</div>

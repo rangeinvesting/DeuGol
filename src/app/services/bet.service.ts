@@ -21,7 +21,7 @@ export class BetService {
 	sendOdd(odd: any, gameUrl: any, cb: any) {
 		const viewstate = localStorage.getItem('viewstate');
 		const cookie = localStorage.getItem('cookie');
-		this.ev.trigger('showLoader', true);
+		//this.ev.trigger('showLoader', true);
 		this.api
 			.post('bet/sendOdd', { odd, gameUrl, viewstate, cookie })
 			.pipe(

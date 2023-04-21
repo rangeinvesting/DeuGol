@@ -1,8 +1,14 @@
 #listCard {
 	margin-bottom: 10px;
-	margin: 15px;
+	/*margin: 15px;*/
 	border-radius: 10px;
-	background: #1e2024;
+	background: #eee;
+    transition: background 1s ease-out !important;
+    color: #000;
+}
+
+.title{
+	color: #54078f;
 }
 
 #listCard .widget__content {
@@ -12,13 +18,12 @@
 #listCard .widget__content .title {
 	font-weight: bold;
 	font-size: 13px;
-	color: #e6ce00;
 }
 
 #listCard .sub-title {
 	font-weight: normal;
-	font-size: 12px;
-	color: #d2d0d0;
+	font-size: 10px;
+	color: #333;
 	margin-bottom: 0px;
 }
 
@@ -32,21 +37,26 @@
 	margin-bottom: 10px;
 }
 
-.balance-card-bottom {
+.list-card-bottom {
 	padding: 10px;
-	background: #1c1e22;
+	background: #ddd;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
+	color: #333;
 }
 
 .transactionDetail {
-	font-size: 13.5px;
-	vertical-align: middle;
-	color: #fff;
-	border-top: 1px solid #181c21;
-	font-family: Montserrat, sans-serif;
-	line-height: 1.5em;
-	padding: 10px 0 10px;
+	font-size: 12.5px;
+    vertical-align: middle;
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+    line-height: 1.5em;
+    padding: 10px 0 10px;
+    border-bottom: 0.5px solid #ddd;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 5px;
 }
 
 .transactionDetail .col-left {
@@ -57,9 +67,10 @@
 }
 
 .transactionDetail .col-left .info small {
-	font-weight: normal;
-	display: block;
-	color: #b2b2b2;
+	font-weight: bold;
+    display: block;
+    color: #4caf50;
+    font-size: 11px;
 }
 
 .transactionDetail .col-right {
@@ -81,22 +92,30 @@
 
 .btn-view-all-transactions {
 	position: absolute;
-	right: 20px;
+	right: 42px;
 	margin-top: -20px;
+	font-size: 12px;
 	border: none;
 	background: transparent;
-	color: #e0e0e0;
+	color: #444;
 }
-.status{
-	width: 90px;
-    height: 22px;
+.status i{
+    font-size: 10px;
+    /*width: 75px;
+    height: 20px;
+    line-height: 20px;
     text-align: center;
-    margin-left: 50px;
+    margin-left: 17px;
     color: #fff;
     border-radius: 5px;
-    padding: 2px;
-    font-weight: bold !important;
+    font-weight: bold !important;*/
 }
 .warning-msg{
+	font-size: 12px;
 	padding-bottom:10px;
+}
+
+.info{
+	color: #1c1e22;
+	font-size: 11.5px;
 }

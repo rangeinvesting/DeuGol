@@ -10,6 +10,8 @@ import { EventsService } from '../../services/utils/events.service';
 export class HeaderCommonComponent implements OnInit {
 	
 	@Input() pageTitle = '';
+  @Input() backto = '';
+  @Input() table = '';
 
   constructor(private router: Router, private ev: EventsService) { }
 
@@ -17,8 +19,8 @@ export class HeaderCommonComponent implements OnInit {
   }
 	
   close(){
-	  this.ev.trigger("currentTab", "home");
-	  this.router.navigate(['home']);
+	  this.ev.trigger("currentTab", this.table?this.table:"home");
+	  this.router.navigate([this.backto?this.backto:'home']);
   }
 
 }

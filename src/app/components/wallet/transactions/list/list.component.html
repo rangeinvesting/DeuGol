@@ -9,19 +9,19 @@
 		<div class="row transactionDetail" *ngFor="let transaction of transactions" id="op_{{transaction.operation_id}}">
 											 <div class="col-7 col-left">
 												 <div class="info">
-													 {{transaction.createdAt | date}}
-													 <small>{{transaction.type | transactionDetails:'Type'}}</small>
+													 {{convertTimeStampToDate(transaction.createdAt) | date}}
+													 <small [ngStyle]="{'color': transaction.type | transactionDetails:'Status':'color' }">{{transaction.type | transactionDetails:'Type'}}</small>
 												 </div>
 											 </div>
 											 <div class="col-5 col-right">
 												 <div class="info">
 												 {{transaction.amount | currency:"BRL" }}
-													 <small class="status" [ngStyle]="{'background-color': transaction.status | transactionDetails:'Status':'color' }">{{transaction.status | transactionDetails:'Status'}}</small>
+													 <small class="status">{{transaction.status | transactionDetails:'Status'}} <i class="fas fa-circle" [ngStyle]="{'color': transaction.status | transactionDetails:'Status':'color' }"></i></small>
 												 </div>
 											 </div>
 										   </div>
 	</div>
-	<div class="balance-card-bottom" *ngIf="transactions.length > 0">
+	<div class="list-card-bottom" *ngIf="transactions.length > 0">
 		<h6 class="sub-title">
 			10 últimas transações
 		</h6>

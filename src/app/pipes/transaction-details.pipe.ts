@@ -35,7 +35,10 @@ export class TransactionDetailsPipe implements PipeTransform {
 		  'withdraw':{'label':'Saque', color: '#fff'},
 		  'transfer':{'label':'Transferência', color: '#fff'},
 		  'payment':{'label':'Pagamento', color: '#fff'},
-		  'award':{'label':'Prêmio', color: '#fff'}
+		  'award':{'label':'Prêmio', color: '#fff'},
+		  'bonus':{'label':'Bônus', color: '#fff'},
+		  'cashback':{'label':'Cashback', color: '#fff'},
+		  'bonus_refferer':{'label':'Bônus', color: '#fff'}
 	  }
 	  if(!types[type]){
 		  return;

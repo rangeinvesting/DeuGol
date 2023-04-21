@@ -2,13 +2,14 @@
 	<div class="modal-dialog modal-lg modal--login modal--login-only" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeLoginModal()">
-					<span aria-hidden="true">&times;</span>
-				</button>
 			</div>
 			<div class="modal-body">
 				<div class="logo-container">
-				<img src="assets/images/brand/logo-deugol-001-contornado.png" srcset="assets/images/brand/logo-deugol-001-contornado.png 2x" alt="DeuGol" class="logo">
+				<img src="assets/images/brand/dg-logo001.png" srcset="assets/images/brand/dg-logo001.png 2x" alt="DeuGol" class="logo">
+
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeLoginModal()">
+					<span aria-hidden="true">&times;</span>
+				</button>
 				</div>
 				<div class="modal-account-holder">
 					<div class="modal-account__item modal-account__item--logo">
@@ -24,12 +25,13 @@
 							<div role="tabpanel" class="tab-pane fade" id="tab-login" [ngClass]="[tab=='login' ? 'show active' : '']">
 								<!-- Login Form -->
 								<form class="modal-form" [formGroup]="formLogin" (ngSubmit)="doLogin()">
-									<h5>Faça login e aposte nos seus times favoritos</h5>
+									<h5 class="title">Faça login, divirta-se e ganhe! <small>Insira seu e-mail e senha nos campos abaixo!</small></h5>
+									<div class="msgError" *ngIf="error">{{msgError}}</div>
 									<div class="form-group">
 										<input
 											type="email"
 											formControlName="email"
-											class="form-control"
+											class="form-control input"
 											placeholder="Seu E-mail"
 										/>
 									</div>
@@ -37,22 +39,22 @@
 										<input
 											type="password"
 											formControlName="password"
-											class="form-control"
+											class="form-control input"
 											placeholder="Sua Senha"
 										/>
 									</div>
 									<div class="form-group form-group--pass-reminder">
-										<!--<label class="checkbox checkbox-inline"><input
+										<label class="checkbox checkbox-inline"><input
 												type="checkbox"
 												id="inlineCheckbox1"
 												value="option1"
 												checked="checked" />
 											Me lembrar
-											<span class="checkbox-indicator"></span></label>-->
-										<a href="#">Esqueceu sua senha?</a>
+											<span class="checkbox-indicator"></span></label>
+										
 									</div>
-									<div class="form-group form-group--submit">
-										<button class="btn btn-primary-inverse btn-block" [disabled]="submitted">Acessar</button>
+									<div>
+										<a href="javascript:;" (click)="setTab('forgot-password')">Esqueceu sua senha?</a>
 									</div>
 								</form>
 								<!-- Login Form / End -->
@@ -60,13 +62,16 @@
 							<!-- Tab: Login / End --><!-- Tab: Register -->
 							<div role="tabpanel" class="tab-pane fade" id="tab-register" [ngClass]="[tab=='register' ? 'show active' : '']">
 								<!-- Register Form -->
-								<form class="modal-form" [formGroup]="formRegister">
-									<h5>Cadastre-se agora!</h5>
+								<form class="modal-form" [formGroup]="formRegister" (ngSubmit)="doRegister()">
+									<h4 class="main-title">Cadastre-se</h4>
+									<h5 class="title" *ngIf="!referrer"><span *ngIf="bonus>0">Ganhe até <span class="b">{{bonus| currency:"BRL" }}</span> de bônus.</span> <small class="link">Clique aqui e leia o regulamento</small></h5>
+									<div *ngIf="referrer"><h5 class="title">Você ganhou um convite de <span class="bolder">{{referrerName}}</span> e um bônus de até <span class="bolder">{{bonus| currency:"BRL" }}</span>. Aproveite! <small class="link">Clique aqui e leia o regulamento</small></h5></div>
+									<div class="msgError" *ngIf="error">{{msgError}}</div>
 									<div class="form-group">
 										<input
 											type="text"
 											formControlName="fullname"
-											class="form-control"
+											class="form-control input"
 											placeholder="Seu nome"
 										/>
 									</div>
@@ -74,7 +79,7 @@
 										<input
 											type="email"
 											formControlName="email"
-											class="form-control"
+											class="form-control input"
 											placeholder="Seu E-mail"
 										/>
 									</div>
@@ -82,7 +87,7 @@
 										<input
 											type="password"
 											formControlName="password"
-											class="form-control"
+											class="form-control input"
 											placeholder="Digite uma senha"
 										/>
 									</div>
@@ -90,15 +95,58 @@
 										<input
 											type="password"
 											formControlName="confirmPassword"
-											class="form-control"
+											class="form-control input"
 											placeholder="Confirme a senha"
 										/>
 									</div>
-									<div class="form-group form-group--submit">
-										<a
-											href="_soccer_shop-account.html"
-											class="btn btn-success btn-block">Criar conta</a>
+									<div class=""><div class="form-check">
+										<input type="checkbox" id="tos_read" class="form-check-input" name="tos_read" (click)="tosRead()" />
+      <label for="tos_read" class="form-check-label">Declaro que li e concordo com os <span class="tosLink">termos de uso</span> e <span class="tosLink">termos promocionais</span>.</label></div>
 									</div>
+								</form>
+								<!-- Register Form / End -->
+							</div>
+							<div role="tabpanel" class="tab-pane fade" id="tab-verify-email" [ngClass]="[tab=='verify-email' ? 'show active' : '']">
+								<!-- Register Form -->
+								<form class="modal-form" [formGroup]="formVerify" (ngSubmit)="doRegister()">
+									<h4 class="main-title">Estamos quase lá.</h4>
+									<h5 class="title">Verifique seu e-mail para que você consiga utilizar o aplicativo DeuGol. <small>Te enviamos um e-mail contendo o código de verificação, acesse seu e-mail e digite o código recebido no campo abaixo.</small></h5>
+									<div class="form-group">
+										<input
+											type="tel"
+											formControlName="emailCode"
+											class="form-control input"
+											placeholder="Digite o código"
+										/>
+									</div>
+								</form>
+								<!-- Register Form / End -->
+							</div>
+
+						<div role="tabpanel" class="tab-pane fade" id="tab-forgot-password" [ngClass]="[tab=='forgot-password' ? 'show active' : '']">
+								<!-- Register Form -->
+								<form class="modal-form" [formGroup]="formForgotPassword" (ngSubmit)="doForgotPassword()">
+									<h4 class="main-title">Esqueceu sua senha?</h4>
+									<h5 class="title">Digite seu e-mail para <span class="bolder">recuperar sua senha!</span></h5>
+									<div class="msgError" *ngIf="error">{{msgError}}</div>
+									<div class="form-group">
+										<input
+											type="email"
+											formControlName="email"
+											class="form-control input"
+											placeholder="Digite seu e-mail"
+										/>
+									</div>
+								</form>
+								<!-- Register Form / End -->
+							</div>
+
+							<div role="tabpanel" class="tab-pane fade" id="tab-success" [ngClass]="[tab=='success' ? 'show active' : '']">
+								<!-- Register Form -->
+								<form class="modal-form success">
+									<img src="data:image/png;base64,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">
+									<h4 class="main-title">{{successTitle}}</h4>
+									<p>{{successText}}</p>
 								</form>
 								<!-- Register Form / End -->
 							</div>
@@ -107,21 +155,32 @@
 						<!-- Nav tabs -->
 						<div class="nav-tabs-login-wrapper">
 							<ul class="nav nav-tabs nav-justified nav-tabs--login" role="tablist">
-								<li class="nav-item">
+								<li class="nav-item" *ngIf="tab=='login'">
 									<a
-										class="nav-link"
-									    [ngClass]="[tab=='login' ? 'active' : '']"
-										(click)="setTab('login')"
+										class="nav-link active"
+										(click)="doLogin()"
 										role="tab"
 										data-toggle="tab">Acessar</a>
 								</li>
-								<li class="nav-item">
+								<li class="nav-item"*ngIf="tab=='register'">
 									<a
-										class="nav-link"
-									    [ngClass]="[tab=='register' ? 'active' : '']"
-										(click)="setTab('register')"
+										class="nav-link active"
+									    [ngClass]="[tos==true ? 'enabled' : 'disabled']"
+										(click)="doRegister()"
 										role="tab"
-										data-toggle="tab">Cadastrar</a>
+										data-toggle="tab">Criar conta</a>
+								</li><li class="nav-item"*ngIf="tab=='verify-email'">
+									<a
+										class="nav-link active"
+										(click)="doRegister()"
+										role="tab"
+										data-toggle="tab">Verificar E-mail</a>
+								</li><li class="nav-item"*ngIf="tab=='forgot-password'">
+									<a
+										class="nav-link active"
+										(click)="doForgotPassword()"
+										role="tab"
+										data-toggle="tab">Resetar minha senha</a>
 								</li>
 							</ul>
 						</div>

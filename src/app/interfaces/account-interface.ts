@@ -13,8 +13,8 @@ class AccountInterface {
 		}
 		const accountInfo: AccountInterface = {
 			email: useInfo.user.email,
-			profile: useInfo.user.profile,
-			level: useInfo.level?useInfo.level:1,
+			profile: useInfo.user,
+			level: useInfo.level?useInfo.level:'Varzea 1',
 			wallet: useInfo.wallet
 		}
 		return accountInfo;

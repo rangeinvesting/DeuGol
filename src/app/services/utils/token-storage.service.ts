@@ -11,7 +11,7 @@ export class TokenStorageService {
   constructor() { }
 
   logOut() {
-	window.localStorage.removeItem(USER_KEY);
+    window.localStorage.removeItem(USER_KEY);
     window.localStorage.removeItem(TOKEN_KEY);
   }
 
@@ -26,11 +26,8 @@ export class TokenStorageService {
   }
 
   public saveUser(data: any) {
-	if(data.token){
-		this.saveToken(data.token);
-	}
     window.localStorage.removeItem(USER_KEY);
-    window.localStorage.setItem(USER_KEY, JSON.stringify({user: data.user, wallet: data.wallet}));
+    window.localStorage.setItem(USER_KEY, JSON.stringify({user: data, wallet: data.wallet}));
   }
 
   public getUser() {

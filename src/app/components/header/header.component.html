@@ -1,15 +1,15 @@
 <div class="header-mobile clearfix unselectable" id="header-mobile">
 	<div class="header-mobile__logo" [ngClass]="[isLogged ? 'center' : 'left']">
-		<span (click)="openMenu(true)"><img src="assets/images/brand/logo-deugol-001-contornado.png" srcset="assets/images/brand/logo-deugol-001-contornado.png 2x" alt="DeuGol" class="header-mobile__logo-img"></span>
+		<span (click)="openMenu(true)"><img src="assets/images/brand/dg-logo001.png" srcset="assets/images/brand/dg-logo001.png 2x" alt="DeuGol" class="header-mobile__logo-img"></span>
 	</div>
 	<div class="header-mobile__inner">
 		<div class="header-mobile__userInfo left">
-			<div class="row" *ngIf="isLogged">
+			<div class="row" *ngIf="isLogged" (click)="openProfilePage()">
 				<div class="col-3 avatar-content">
-				<img src="https://ui-avatars.com/api/?name=Thiago+Pedroso" class="avatar-profile">
+				<img src="https://ui-avatars.com/api/?name={{account?.profile?.displayName}}" class="avatar-profile">
 				</div>
 				<div class="col-9">
-				<h6 class="info-block__heading">{{account?.profile?.name}}</h6>
+				<h6 class="info-block__heading">{{account?.profile?.displayName}}</h6>
 				<span class="info-block__cart-sum">{{account?.level}}</span>
 				</div>
 			</div>
@@ -29,7 +29,7 @@
 			<div class="row" *ngIf="isLogged">
 				<div class="col-12" (click)="openWallet()">
 				<h6 class="info-block__heading">Saldo</h6><span class="info-block__cart-sum">
-					<i class="fas fa-plus" id="btnDeposit"></i>{{ account?.wallet?.balance | currency:"BRL" }}</span>
+					{{ account?.wallet?.balance | currency:"BRL" }}</span>
 				</div>
 			</div>
 		</div>
