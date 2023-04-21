@@ -1,0 +1,195 @@
+.main-news-banner--soccer-ball {
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+border-bottom: 3px solid #f7c107;
+background: url('https://meups.com.br/wp-content/uploads/2021/07/Bellingham_ComposedBallControl_Discalimer_G5_F22_Lores_WM-900x503.jpg');
+    background-size: cover;
+    border-radius: 10px !important;
+}
+
+
+.main-news-banner--soccer-ball .main-news-banner__inner{
+	padding-right: 20px !important;
+	background: rgba(0,0,0,0.6);
+}
+
+.price{
+    display: inline-block;
+    font-size: 45px;
+    font-weight: normal;
+    color: #e1cd22;
+    text-shadow: 0px 0px 18px #a9990e, 2px 0px 0px #ffc107, 0px 2px 0px #ffc107, -2px 0px 0px #ffeb3b, 0px -2px 0px #ffeb3b;
+    font-family: Exo\ 2,sans-serif;
+    margin-bottom: 0px;
+}
+
+.pre-title{
+	margin-bottom: -10px;
+	color: #00a2ff;
+    font-size: 22px;
+    line-height: 34px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 75px #068be4, 0px 0px 7px #068be4;
+}
+
+.main-news-banner .main-news-banner__highlight{
+	color: #e1cd22;
+}
+
+.main-news-banner--soccer-ball .posts__excerpt{
+	padding-right: 0 !important;
+	color: #fff;
+	line-height: 16px !important;
+}
+.posts--simple-list--xlg .posts__title{
+	font-size: 27px;
+}
+
+.card-bottom{
+	text-align: center;
+}
+
+.btn-act{
+	background: #e91e63;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+.posts__inner{
+	margin-top: 20px;
+    text-align: center;
+}
+
+.ref-status{
+	font-size: 17px;
+    color: #27313b !important;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    background: #f7c107;
+    border-bottom-left-radius: 10px;
+}
+
+.ref-status-left{
+    font-size: 17px;
+    color: #ffffff !important;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    background: #4caf50;
+    border-bottom-right-radius: 10px;
+}
+
+.times{
+	font-size: 14px;
+    color: #fff;
+}
+
+.times .title{
+	font-weight: bold;
+	margin-bottom: -10px;
+}
+
+.ref-sub{
+	font-size: 11px;
+    color: #fff;
+    background: rgb(0 0 0 / 47%);
+    line-height: 25px;
+    border-radius: 5px;
+    width: 140px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.posts__more{
+	padding: 0;
+	margin-top: 10px;
+}
+
+.link{
+    color: #f7c107;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.BoxDistributedPrizes{
+    width: 100%;
+    padding: 5px;
+    height: 120px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.BoxDistributedPrizes .trophy{
+    background: url('/assets/images/trophy.png');
+    background-repeat: no-repeat;
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 5px;
+
+}
+
+.BoxDistributedPrizes .sub{
+    padding: 5px;
+    background: rgba(240,242,246,.6);
+    margin-top: 76px;
+    font-size: 14px;
+    border-radius: 7px;
+    text-align: center;
+    color: #333;
+}
+
+.BoxDistributedPrizes .title{
+    position: absolute;
+    width: 100%;
+    color: #54078f;
+    font-size: 12px;
+    left: 0;
+    margin-top: 3px;
+    text-align: center;
+}
+
+.BoxDistributedPrizes .prize-amount {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin-top: 35px;
+    font-size: 31px;
+    text-align: center;
+    color: #16181a;
+    font-family: Exo\ 2,sans-serif;
+}
+
+.howtowork-link{
+font-size: 13px;
+    letter-spacing: -.02em;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-style: normal;
+    color: #2196f3 !important;
+    text-align: center;
+    border-radius: 5px;
+    width: 250px;
+    /* height: 35px; */
+    text-decoration: underline;
+}

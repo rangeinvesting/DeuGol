@@ -1,0 +1,138 @@
+div.tab-nav{
+	position: fixed;
+    z-index: 9999;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+	padding: 0px;
+	margin-bottom:0px !important;
+	list-style: none;
+}
+
+div.tab-nav div.tab-item{
+	display:inline-block;
+	width:33.33%;
+	height:60px;
+	background: #0c2461;
+	text-align:center;
+	padding-top:10px;	
+}
+
+div.tab-nav div.tab-item .badge{
+    position: absolute;
+	top: 4px;
+    margin-left: -10px;
+	border-radius: 100%;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+}
+
+div.tab-nav div.tab-item .label{
+	display:none;
+}
+
+div.tab-nav div.tab-item.active{
+    background: url(https://deugolapp.run-us-west2.goorm.io/assets/download.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+	margin-bottom: -29px;
+}
+
+div.tab-nav div.tab-item.active .badge{
+	display:none;	
+}
+
+div.tab-nav div.tab-item.active .label{
+	display:block;
+	position:absolute;
+	top: 38px;
+    margin-left: 35px;
+}
+
+div.tab-nav div.tab-item.active:before, div.tab-nav div.tab-item.active:after{
+	content: '';
+    display: block;
+    background: #0c2461;
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    bottom: 0px;
+    z-index: -1;
+}
+div.tab-nav div.tab-item.active:before{
+    margin-left: -75px;
+}
+
+div.tab-nav div.tab-item.active:after{
+	margin-left: 96px;
+}
+
+div.tab-nav div.tab-item.active svg{
+	margin-bottom: -36.7px;
+}
+
+div.tab-nav div.tab-item img.tab-icon{
+	width:30px;
+	color:#fff;
+	width: 35px;
+	filter: brightness(0) invert(1);
+}
+
+div.tab-nav div.tab-item.active:nth-child(2) img.tab-icon{
+	background:#cddc39;
+}
+
+div.tab-nav div.tab-item.active:nth-child(3) img.tab-icon{
+	background:#ffee58;
+}
+
+div.tab-nav div.tab-item.active img.tab-icon{
+	position: absolute;
+	width:50px;
+    top: -22.5px;
+    margin-left: -25px;
+	padding:5px;
+	background:#fff;
+	border-radius:100%;
+	filter: none;
+}
+
+div.tab-nav div.tab-item.active img.tab-icon.aposta{
+	border: 3px solid #4caf50;
+}
+
+
+@media (min-width:320px) { 
+	div.tab-nav div.tab-item.active:before{
+    	margin-left: -79px;
+	}
+	div.tab-nav div.tab-item.active:after{
+		margin-left: 90px;
+	}
+}
+@media (min-width:360px) { 
+	div.tab-nav div.tab-item.active:before{
+    	margin-left: -76px;
+	}
+	div.tab-nav div.tab-item.active:after{
+		margin-left: 93px;
+	}
+}
+@media (min-width:375px) { 
+	div.tab-nav div.tab-item.active:before{
+    	margin-left: -72px;
+	}
+	div.tab-nav div.tab-item.active:after{
+		margin-left: 97px;
+	}
+}
+@media (min-width:414px) { 
+	div.tab-nav div.tab-item.active:before{
+    	margin-left: -67px;
+	}
+	div.tab-nav div.tab-item.active:after{
+		margin-left: 104px;
+	}
+}

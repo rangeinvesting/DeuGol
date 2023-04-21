@@ -1,0 +1,134 @@
+<div class="modal fade" id="modal-login-register-tabs" tabindex="-1" role="dialog" [ngClass]="[isLoginShow ? 'show' : '']">
+	<div class="modal-dialog modal-lg modal--login modal--login-only" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeLoginModal()">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="logo-container">
+				<img src="assets/images/brand/logo-deugol-001-contornado.png" srcset="assets/images/brand/logo-deugol-001-contornado.png 2x" alt="DeuGol" class="logo">
+				</div>
+				<div class="modal-account-holder">
+					<div class="modal-account__item modal-account__item--logo">
+						<p class="modal-account__item-register-txt">
+							Don’t have an account? <a href="#">Register Now</a> and enjoy all our
+							benefits!
+						</p>
+					</div>
+					<div class="modal-account__item">
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<!-- Tab: Login -->
+							<div role="tabpanel" class="tab-pane fade" id="tab-login" [ngClass]="[tab=='login' ? 'show active' : '']">
+								<!-- Login Form -->
+								<form class="modal-form" [formGroup]="formLogin" (ngSubmit)="doLogin()">
+									<h5>Faça login e aposte nos seus times favoritos</h5>
+									<div class="form-group">
+										<input
+											type="email"
+											formControlName="email"
+											class="form-control"
+											placeholder="Seu E-mail"
+										/>
+									</div>
+									<div class="form-group">
+										<input
+											type="password"
+											formControlName="password"
+											class="form-control"
+											placeholder="Sua Senha"
+										/>
+									</div>
+									<div class="form-group form-group--pass-reminder">
+										<!--<label class="checkbox checkbox-inline"><input
+												type="checkbox"
+												id="inlineCheckbox1"
+												value="option1"
+												checked="checked" />
+											Me lembrar
+											<span class="checkbox-indicator"></span></label>-->
+										<a href="#">Esqueceu sua senha?</a>
+									</div>
+									<div class="form-group form-group--submit">
+										<button class="btn btn-primary-inverse btn-block" [disabled]="submitted">Acessar</button>
+									</div>
+								</form>
+								<!-- Login Form / End -->
+							</div>
+							<!-- Tab: Login / End --><!-- Tab: Register -->
+							<div role="tabpanel" class="tab-pane fade" id="tab-register" [ngClass]="[tab=='register' ? 'show active' : '']">
+								<!-- Register Form -->
+								<form class="modal-form" [formGroup]="formRegister">
+									<h5>Cadastre-se agora!</h5>
+									<div class="form-group">
+										<input
+											type="text"
+											formControlName="fullname"
+											class="form-control"
+											placeholder="Seu nome"
+										/>
+									</div>
+									<div class="form-group">
+										<input
+											type="email"
+											formControlName="email"
+											class="form-control"
+											placeholder="Seu E-mail"
+										/>
+									</div>
+									<div class="form-group">
+										<input
+											type="password"
+											formControlName="password"
+											class="form-control"
+											placeholder="Digite uma senha"
+										/>
+									</div>
+									<div class="form-group">
+										<input
+											type="password"
+											formControlName="confirmPassword"
+											class="form-control"
+											placeholder="Confirme a senha"
+										/>
+									</div>
+									<div class="form-group form-group--submit">
+										<a
+											href="_soccer_shop-account.html"
+											class="btn btn-success btn-block">Criar conta</a>
+									</div>
+								</form>
+								<!-- Register Form / End -->
+							</div>
+							<!-- Tab: Register / End -->
+						</div>
+						<!-- Nav tabs -->
+						<div class="nav-tabs-login-wrapper">
+							<ul class="nav nav-tabs nav-justified nav-tabs--login" role="tablist">
+								<li class="nav-item">
+									<a
+										class="nav-link"
+									    [ngClass]="[tab=='login' ? 'active' : '']"
+										(click)="setTab('login')"
+										role="tab"
+										data-toggle="tab">Acessar</a>
+								</li>
+								<li class="nav-item">
+									<a
+										class="nav-link"
+									    [ngClass]="[tab=='register' ? 'active' : '']"
+										(click)="setTab('register')"
+										role="tab"
+										data-toggle="tab">Cadastrar</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Nav tabs / End -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

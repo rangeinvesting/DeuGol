@@ -1,0 +1,102 @@
+#listCard {
+	margin-bottom: 10px;
+	margin: 15px;
+	border-radius: 10px;
+	background: #1e2024;
+}
+
+#listCard .widget__content {
+	padding: 15px 15px 0;
+}
+
+#listCard .widget__content .title {
+	font-weight: bold;
+	font-size: 13px;
+	color: #e6ce00;
+}
+
+#listCard .sub-title {
+	font-weight: normal;
+	font-size: 12px;
+	color: #d2d0d0;
+	margin-bottom: 0px;
+}
+
+#listCard .sub-title i {
+	margin-left: 5px;
+}
+
+#listCard .widget__content .balance {
+	font-size: 40px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+.balance-card-bottom {
+	padding: 10px;
+	background: #1c1e22;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.transactionDetail {
+	font-size: 13.5px;
+	vertical-align: middle;
+	color: #fff;
+	border-top: 1px solid #181c21;
+	font-family: Montserrat, sans-serif;
+	line-height: 1.5em;
+	padding: 10px 0 10px;
+}
+
+.transactionDetail .col-left {
+	text-align: left;
+}
+
+.transactionDetail .col-left .info {
+}
+
+.transactionDetail .col-left .info small {
+	font-weight: normal;
+	display: block;
+	color: #b2b2b2;
+}
+
+.transactionDetail .col-right {
+	text-align: right;
+}
+
+.transactionDetail .col-right .info {
+	font-weight: bold;
+}
+
+.transactionDetail .col-right .info small {
+	font-weight: normal;
+	display: block;
+}
+
+.transactionDetail .col-right .info small.success {
+	color: #8bc34a;
+}
+
+.btn-view-all-transactions {
+	position: absolute;
+	right: 20px;
+	margin-top: -20px;
+	border: none;
+	background: transparent;
+	color: #e0e0e0;
+}
+.status{
+	width: 90px;
+    height: 22px;
+    text-align: center;
+    margin-left: 50px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px;
+    font-weight: bold !important;
+}
+.warning-msg{
+	padding-bottom:10px;
+}

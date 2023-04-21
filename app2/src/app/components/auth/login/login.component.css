@@ -1,0 +1,174 @@
+.modal {
+	z-index: 99999;
+}
+.modal-body{
+	display: block;
+    overflow: scroll;
+    height: 100%;
+}
+.modal .modal-dialog {
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	padding: 0;
+	margin: 0;
+}
+.modal .modal-content {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+.modal.show {
+	display: block;
+	opacity: 1;
+	animation:fadein .5s;
+}
+
+.modal h5 {
+	color: #222;
+	text-align:center;
+}
+.modal .close{
+	border-radius: 5px;
+    background-color: #f7c107;
+    color: #54068f;
+    top: 32px;
+    right: 32px;
+	z-index:999999;
+}
+.modal .logo-container{
+	text-align:center;
+	background-color: #54068f !important;
+	height: 65px !important;
+}
+.modal .logo-container .logo{
+	width: 80px;
+	margin-top: 5px;
+}
+.nav-tabs-login-wrapper {
+	/*position: absolute;*/
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.nav-tabs-login-wrapper .nav-item a{
+	border-radius: 10px !important;
+}
+
+.btn-action{
+	color: #0c2461;
+    background-color: #ffc107;
+    border-color: transparent;
+    font-size: 14px;
+}
+
+.nav-link.active{
+	color: #54078f;
+    background-color: #ffc107;
+    font-size: 14px;
+}
+
+.nav-link.disabled{
+	opacity: 0.8;
+    background: #9e9e9e;
+    color: #333;
+    pointer-events: none;
+}
+
+.form-group .input{
+    width: 100%;
+    font-size: 17px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #ddd;
+    border: none !important;
+    padding-left: 15px;
+}
+
+.form-group .input::placeholder{
+	color: #333;
+}
+
+.form-check-label {
+	line-height: normal;
+}
+
+.main-title{
+	text-align: center;
+	font-size: 23px;
+	color: #54078f;
+}
+
+.modal-form.success{
+	text-align: center;
+}
+
+.success p{
+	line-height: normal;
+    font-size: 15px;
+    color: #444;
+}
+
+.success .main-title{
+	color: #59d693 !important;
+}
+
+.title .link{
+    color: #3f51b5;
+    text-decoration: underline;
+}
+
+.title small{
+	display: block;
+    font-size: 11px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.bolder{
+	color: #54078f;
+}
+.tosLink{
+	font-size: 11px;
+    margin-top: 10px;
+    color: #3f51b5;
+    text-decoration: underline;
+}
+
+.msgError{
+	text-align: center;
+    line-height: normal;
+    padding: 10px;
+    color: #f44336;
+    border: 1px solid #f44336;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.close{
+	position: absolute;
+    top: 20px !important;
+    right: 15px !important;
+    width: 25px !important;
+    height: 25px !important;
+    border-radius: 5px;
+    background-color: #f7c107;
+    color: #54068f;
+    opacity: 1;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+@keyframes fadein {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}

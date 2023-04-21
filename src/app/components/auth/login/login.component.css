@@ -1,0 +1,54 @@
+.modal {
+	z-index: 99999;
+}
+.modal .modal-dialog {
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	padding: 0;
+	margin: 0;
+}
+.modal .modal-content {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+.modal.show {
+	display: block;
+	opacity: 1;
+	animation:fadein .5s;
+}
+
+.modal h5 {
+	color: #222;
+	text-align:center;
+}
+.modal .close{
+	border-radius: 5px;
+    background-color: #0c2461;
+    top: 25px;
+    right: 25px;
+	z-index:999999;
+}
+.modal .logo-container{
+	text-align:center;
+	margin-top:20px;
+}
+.modal .logo-container .logo{
+	width: 120px;
+}
+.nav-tabs-login-wrapper {
+	position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    margin: 0;
+}
+@keyframes fadein {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}

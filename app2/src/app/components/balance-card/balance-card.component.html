@@ -1,0 +1,30 @@
+<aside id="balanceCard" class="widget widget--sidebar bg-gradient widget-standings unselectable">
+	<div class="widget__content card__content">
+		<h6 class="title">
+			Seu saldo
+		</h6>
+	<h3 class="balance">{{ account?.wallet?.balance | currency:"BRL" }}
+		</h3>
+		<h6 class="sub-title" *ngIf="account?.wallet?.bonus">
+			Bônus <b>{{ account?.wallet?.bonus | currency:"BRL" }}</b>
+		</h6>
+		<h6 class="sub-title" *ngIf="account?.wallet?.blocked_balance">
+			Saldo a liberar <b>{{ account?.wallet?.blocked_balance | currency:"BRL" }}</b> <i class="fas fa-question-circle"></i>
+		</h6>
+		<div class="row" id="actions">
+				<div class="col-12">
+					<button class="btn btn-default btn-sm" id="btnDeposit" (click)="makeDeposit()">
+						Depositar
+					</button>
+					<button class="btn btn-default btn-outline btn-sm" id="btnWithdraw" [disabled]="account?.wallet?.blocked_balance < 1">
+						Sacar
+					</button>
+				</div>
+			</div>
+	</div>
+	<div class="balance-card-bottom">
+		<h6 class="sub-title">
+			Cashback nos últimos 30 dias <b>{{ 0 | currency:"BRL" }}</b>
+		</h6>
+	</div>
+</aside>
