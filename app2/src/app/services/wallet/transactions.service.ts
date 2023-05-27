@@ -30,7 +30,7 @@ export class TransactionsService  {
 
 	  return this.afs.collection(`transactions`, ref => ref.where('useruid','==', user.uid)).valueChanges();
 		
-  	}
+	}
 	
 	isLogged (){
 		return this.token.getToken()

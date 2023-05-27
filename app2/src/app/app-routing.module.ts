@@ -6,6 +6,7 @@ import { AccountComponent } from './pages/user/account/account.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { WalletComponent } from './pages/wallet/wallet.component';
 import { DepositComponent } from './pages/wallet/deposit/deposit.component';
+import { TicketDetailPageComponent } from './pages/ticket-detail-page/ticket-detail-page.component';
 
 const routes: Routes = [
  	{ path: 'home', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
  // { path: 'mod', component: BoardModeratorComponent },
 	{ path: 'wallet', component: WalletComponent },
   { path: 'wallet/deposit', component: DepositComponent },
+  { path: 'ticket-details/:ref', component: TicketDetailPageComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

@@ -122,7 +122,7 @@ div.tab-nav div.tab-item.active img.tab-icon.aposta{
 }
 @media (min-width:375px) { 
 	div.tab-nav div.tab-item.active:before{
-    	margin-left: -72px;
+    	margin-left: -69px;
 	}
 	div.tab-nav div.tab-item.active:after{
 		margin-left: 97px;

@@ -13,6 +13,7 @@ export interface PromoBanners {
   action:string;
   image: any;
   bg: any;
+  textColor: any;
 }
 
 
@@ -50,13 +51,16 @@ export class PromoBannerComponent implements OnInit {
 
     try{
       let _action = JSON.parse(action);
-      console.log(_action)
       if(_action.action == 'openRegisterModal'){
         return this.openRegisterModal(_action.refType, _action.ref);
       }
     }catch(e){
       console.log('No action')
     }
+  }
+
+  getTextColor(color: any){
+    return `color:${color?color:'#fff'};`
   }
 
   getPromoBanners(){
@@ -77,6 +81,7 @@ export class PromoBannerComponent implements OnInit {
                 action: bonus.action,
                 image: bonus.banner,
                 bg: bonus.bannerBg,
+                textColor: this.getTextColor(bonus.textColor)
               }
             });
            

@@ -40,7 +40,7 @@
 
 .mobile .header-mobile__inner{
 	height: 65px !important;
-	background: #54068f !important;
+	background: #54078f !important;
 }
 
 .mobile .burger-menu-icon{
@@ -54,9 +54,9 @@
     top: 23px;
     /*width: 24px;*/
     height: 24px;
-    line-height: 24px;
-    font-size: 22px;
-    color: #fff;
+    line-height: 17px;
+    font-size: 18px;
+    color: #FFEB3B;
     text-align: right;
 }
 
@@ -157,7 +157,7 @@ body{
     font-size: 16px;
     line-height: 1.2em;
     letter-spacing: -.02em;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     text-transform: uppercase;
     font-style: normal;
 	color:#54078f !important;
@@ -235,4 +235,10 @@ h3.vs{
   to {
     opacity: 0;
   }
+}
+
+.info-block__heading, .info-block__link {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    margin-bottom: 0 !important;
 }

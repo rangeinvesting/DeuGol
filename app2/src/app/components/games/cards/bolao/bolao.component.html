@@ -1,26 +1,27 @@
  <div *ngIf="jackpotsLoaded">
    <h4 class="section-title">
-   Super Bolão da bet
+   BolaCap
 </h4>
+
  <div class="container-p10">
-                     <div class="main-news-banner main-news-banner--soccer-ball">
+                     <div class="main-news-banner main-news-banner--soccer-ball" [style]="jackpots.background">
                         <div class="main-news-banner__inner">
                            <div class="posts posts--simple-list posts--simple-list--xlg">
                               <div class="posts__item posts__item--category-1">
                               <span class="ref-status-left">{{jackpots.chance}}x +chances</span>
                               <span class="main-news-banner__highlight ref-status">Concurso #{{jackpots.round}}</span>
                                  <div class="posts__inner">
-                                    <h4 class="posts__title">{{jackpots.title}}</h4>
+                                    <h4 class="posts__title" style="color:#fff;">{{jackpots.title}}</h4>
                                     <div class="posts__excerpt">{{jackpots.desc}}</div>
                                     <div class="card-bottom">
                                     <h5 class="pre-title">PRÊMIOS DE ATÉ</h5>
                                     <h3 class="price">{{jackpots.award_amount | currency:"BRL"}}</h3>
-                                    <div class="ref-sub">Restam 25 cotas de {{jackpots.max_participants}}</div>
+                                    <div class="ref-sub">Restam 2125 cotas de {{jackpots.max_participants}}</div>
                                      <div class="times">
                                        <div class="title">Termina em:</div>
                                         <div>{{days}} dias, {{hours}} horas e {{minutes}} minutos</div>
                                       </div>
-                                    <div class="posts__more"><a href="#" class="btn btn-inverse btn-sm btn-outline btn-condensed btn-md btn-act">PARTICIPAR POR {{jackpots.price | currency:"BRL"}}</a></div>
+                                    <div class="posts__more"><button (click)="ticketDetails(jackpots)" class="btn btn-inverse btn-sm btn-outline btn-condensed btn-md btn-act">PARTICIPAR POR {{jackpots.price | currency:"BRL"}}</button></div>
                                     <div class="posts__more"><a href="#" class="link">Leia o regulamento</a></div>
                                  </div>
                                  </div>
@@ -29,14 +30,10 @@
                         </div>
                      </div> 
                      <div class="BoxDistributedPrizes">
-                        <h5 class="title">Premiação do último bolão - Concurso #96</h5>
+                        <h5 class="title">Premiação do último BolaCap - Concurso #004</h5>
                         <div class="trophy"></div>
-                        <div class="prize-amount">{{'45000' | currency:"BRL"}}</div>
-                        <div class="sub">80 ganhadores dividiram este prêmio</div>
+                        <div class="prize-amount">{{'5000' | currency:"BRL"}}</div>
+                        <div class="sub">2 ganhadores dividiram este prêmio</div>
                      </div>
-
-                     <h4 class="howtowork-link">
-                        Mais bolões DeuGol
-                     </h4>
                  </div>
                   </div>

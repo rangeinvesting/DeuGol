@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { EventsService } from './../../../../services/utils/events.service';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -17,6 +19,7 @@ interface JackPotsInterface {
   status:any;
   title:any;
   winner:any;
+  background: any;
 }
 
 class JackPotsInterface {
@@ -56,14 +59,15 @@ export class BolaoComponent implements OnInit {
 
   jackpots: any;
 
-  constructor(public afs: AngularFirestore) { 
+  constructor(private router: Router, public afs: AngularFirestore, private ev: EventsService) { 
     this.jackpots = new JackPotsInterface({});
   }
 
   getJackPots(){
     //const JackPotsRef: AngularFirestoreDocument<any> = this.afs.collection(`jackpots`);
 
-    this.afs.collection(`jackpots`, ref => ref.where('status','==', 'opened' )).valueChanges().subscribe((data) => {
+    this.afs.collection(`jackpots`, ref => ref.where('status','==', 'opened' )).valueChanges({ idField: 'id' }).subscribe((data) => {
+      console.log(data)
       if(data[0]){
       this.jackpots = new JackPotsInterface(data[0]);
       this.jackpotsLoaded = true;
@@ -71,10 +75,17 @@ export class BolaoComponent implements OnInit {
     });
   }
 
+  ticketDetails(ticket: any){
+    const { id } = ticket;
+    this.router.navigate([`ticket-detail`, id]);
+    this.ev.trigger('currentTab', 'tickets');
+    
+  }
+
 
   myTimer() {
     this.currentDate = new Date();
-    this.targetDate = new Date(2022, 9, 12);
+    this.targetDate = new Date(2023, 9, 12);
     this.cDateMillisecs = this.currentDate.getTime();
     this.tDateMillisecs = this.targetDate.getTime();
     this.difference = this.tDateMillisecs - this.cDateMillisecs;

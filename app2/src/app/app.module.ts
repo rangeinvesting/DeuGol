@@ -58,6 +58,9 @@ import { AccountComponent } from './pages/user/account/account.component';
 import { PreferencesComponent } from './pages/user/preferences/preferences.component';
 import { AwardsComponent } from './pages/user/awards/awards.component';
 import { WinningsComponent } from './pages/user/winnings/winnings.component';
+import { PurchaseTicketsPageComponent } from './pages/purchase-tickets-page/purchase-tickets-page.component';
+import { TicketsPageComponent } from './pages/tickets-page/tickets-page.component';
+import { TicketDetailPageComponent } from './pages/ticket-detail-page/ticket-detail-page.component';
 
 registerLocaleData(ptBr);
 
@@ -98,7 +101,10 @@ registerLocaleData(ptBr);
     AccountComponent,
     PreferencesComponent,
     AwardsComponent,
-    WinningsComponent
+    WinningsComponent,
+    PurchaseTicketsPageComponent,
+    TicketsPageComponent,
+    TicketDetailPageComponent
   ],
   imports: [
     BrowserModule,

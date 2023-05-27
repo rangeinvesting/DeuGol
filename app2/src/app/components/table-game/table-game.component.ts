@@ -20,7 +20,7 @@ export class TableGameComponent implements OnInit {
 
   constructor(private apiGameService: GamesService, public betService: BetService, private wsClient: WebsocketService, public gameService: GameService) { 
 
-	this.getGames();
+	//this.getGames();
 	  
   	}
 	

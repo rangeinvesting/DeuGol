@@ -31,7 +31,7 @@ export class TokenStorageService {
   }
 
   public getUser() {
-	let userData: any = window.localStorage.getItem(USER_KEY);
+	   let userData: any = window.localStorage.getItem(USER_KEY);
     return JSON.parse(userData);
   }
 }

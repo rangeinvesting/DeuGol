@@ -8,7 +8,7 @@
 		<div class="banner-content"
 		*ngFor='let promoBanner of getCurrentPromoBanners(); let i=index;'
 		[style]="promoBanner.bg">
-                        <h4>{{promoBanner.text}}</h4>
+                        <h4 [style]="promoBanner.textColor">{{promoBanner.text}}</h4>
                         <div class="footer"><button class="btn" (click)="setAction(promoBanner.action)">{{promoBanner.actionText}}</button></div>
                     </div>
                      </div>

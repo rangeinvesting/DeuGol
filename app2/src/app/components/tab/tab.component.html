@@ -3,8 +3,8 @@
 		<img alt="" draggable="false" src="https://snack-code-uploads.s3-us-west-1.amazonaws.com/~asset/f45a6e3b31de2153d97eb003cfb4daac" class="tab-icon" [ngClass]="[currentBetGames.length > 0 ? 'aposta' : '']"><label *ngIf="currentBetGames" class="badge badge-danger">{{currentBetGames.length}}</label>
 		<span class="label" style="margin-left: 36px;">Jogos</span>
 	</div>
-	<div class="tab-item" (click)="setPage('jogos')" [ngClass]="[currentTab === 'jogos' ? 'active' : '']"><img alt="" draggable="false" src="/assets/check-mark.png" class="tab-icon"><label *ngIf="newGames" class="badge badge-danger">{{newGames}}</label>
-	<span class="label" style="margin-left: 30px;">Apostas</span></div>
+	<div class="tab-item" (click)="setPage('tickets')" [ngClass]="[currentTab === 'tickets' ? 'active' : '']"><img alt="" draggable="false" src="/assets/check-mark.png" class="tab-icon"><label *ngIf="newGames" class="badge badge-danger">{{newGames}}</label>
+	<span class="label" style="margin-left: 38px;">Cartela</span></div>
 	<div class="tab-item" (click)="setPage('user')" [ngClass]="[currentTab === 'user' ? 'active' : '']"><img alt="" draggable="false" src="/assets/user.png" class="tab-icon"><span class="label" style="margin-left: 37px;">Conta</span></div>
 </div>
 <bet-games-list></bet-games-list>
