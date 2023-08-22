@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CurrencyMaskModule } from "ng2-currency-mask";
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,11 +15,14 @@ import { TableGameComponent } from './components/table-game/table-game.component
 import { TabComponent } from './components/tab/tab.component';
 import { TableFeaturedGameComponent } from './components/table-featured-game/table-featured-game.component';
 import { SwipeDirective } from './swipe.directive';
-import { WebsocketService } from "./services/websocket.service";
+import { WebsocketService } from './services/websocket.service';
 import { ScoreService } from './services/awards/score.service';
-import { CepService } from "./services/common/cep.service";
+import { CepService } from './services/common/cep.service';
 import { CookieService } from 'ngx-cookie-service';
-import { AuthInterceptorService, AuthInterceptorProviders } from "./services/auth/auth-interceptor.service";
+import {
+  AuthInterceptorService,
+  AuthInterceptorProviders,
+} from './services/auth/auth-interceptor.service';
 import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
 import { LoginPipe } from './pages/auth/login.pipe';
@@ -104,30 +107,30 @@ registerLocaleData(ptBr);
     WinningsComponent,
     PurchaseTicketsPageComponent,
     TicketsPageComponent,
-    TicketDetailPageComponent
+    TicketDetailPageComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-  	HttpClientModule,
-  	ReactiveFormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
   ],
   providers: [
-	AuthInterceptorService,
-  	AuthInterceptorProviders,
-	WebsocketService,
-  CepService,
-  ScoreService,
-	CookieService,
-	{ provide: LOCALE_ID, useValue: 'pt' }
+    AuthInterceptorService,
+    AuthInterceptorProviders,
+    WebsocketService,
+    CepService,
+    ScoreService,
+    CookieService,
+    { provide: LOCALE_ID, useValue: 'pt' },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
