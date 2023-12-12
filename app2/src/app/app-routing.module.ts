@@ -6,24 +6,26 @@ import { AccountComponent } from './pages/user/account/account.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { WalletComponent } from './pages/wallet/wallet.component';
 import { DepositComponent } from './pages/wallet/deposit/deposit.component';
+import { TransferComponent } from './pages/wallet/transfer/transfer.component';
 import { TicketDetailPageComponent } from './pages/ticket-detail-page/ticket-detail-page.component';
 
 const routes: Routes = [
- 	{ path: 'home', component: HomeComponent },
- // { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  // { path: 'login', component: LoginComponent },
   { path: 'signup/:refType/:ref', component: RegisterComponent },
- // { path: 'profile', component: ProfileComponent },
+  // { path: 'profile', component: ProfileComponent },
   { path: 'user', component: UserComponent },
   { path: 'user/account', component: AccountComponent },
- // { path: 'mod', component: BoardModeratorComponent },
-	{ path: 'wallet', component: WalletComponent },
+  // { path: 'mod', component: BoardModeratorComponent },
+  { path: 'wallet', component: WalletComponent },
   { path: 'wallet/deposit', component: DepositComponent },
+  { path: 'wallet/transfer', component: TransferComponent },
   { path: 'ticket-details/:ref', component: TicketDetailPageComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

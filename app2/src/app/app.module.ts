@@ -41,6 +41,7 @@ import { HeaderCommonComponent } from './components/header-common/header-common.
 import { BalanceCardComponent } from './components/balance-card/balance-card.component';
 import { ListComponent } from './components/wallet/transactions/list/list.component';
 import { TransactionDepositComponent } from './components/wallet/transactions/deposit/deposit.component';
+import { TransactionWithdrawComponent } from './components/wallet/transactions/withdraw/withdraw.component';
 import { TransactionDetailsPipe } from './pipes/transaction-details.pipe';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { LuckyballComponent } from './pages/games/luckyball/luckyball.component';
@@ -87,6 +88,7 @@ registerLocaleData(ptBr);
     WalletComponent,
     DepositComponent,
     TransactionDepositComponent,
+    TransactionWithdrawComponent,
     TransferComponent,
     WithdrawComponent,
     HeaderCommonComponent,

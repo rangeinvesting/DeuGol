@@ -16,7 +16,7 @@
 					<button class="btn btn-default btn-sm" id="btnDeposit" (click)="makeDeposit()">
 						Depositar
 					</button>
-					<button class="btn btn-default btn-outline btn-sm" id="btnWithdraw" [disabled]="account?.wallet?.blocked_balance < 1">
+					<button class="btn btn-default btn-outline btn-sm" (click)="makeWithdraw()" id="btnWithdraw" [disabled]="account?.wallet?.blocked_balance < 1">
 						Sacar
 					</button>
 				</div>

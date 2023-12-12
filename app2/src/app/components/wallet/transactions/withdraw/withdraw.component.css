@@ -1,4 +1,4 @@
-#WithdrawCard {
+#depositCard {
   margin-bottom: 10px;
   margin: 15px;
   min-height: 120px;
@@ -7,28 +7,28 @@
   transition: background 1s ease-out !important;
 }
 
-#WithdrawCard .widget__content {
+#depositCard .widget__content {
   padding: 15px;
 }
 
-#WithdrawCard .widget__content .title {
+#depositCard .widget__content .title {
   font-weight: bold;
   font-size: 13px;
   color: #e6ce00;
 }
 
-#WithdrawCard .sub-title {
+#depositCard .sub-title {
   font-weight: normal;
   font-size: 12px;
   color: #d2d0d0;
   margin-bottom: 0px;
 }
 
-#WithdrawCard .sub-title i {
+#depositCard .sub-title i {
   margin-left: 5px;
 }
 
-#WithdrawCard .widget__content .balance {
+#depositCard .widget__content .balance {
   font-size: 40px;
   font-weight: normal;
   margin-bottom: 10px;
@@ -45,7 +45,7 @@
   margin-top: 15px;
 }
 
-#btnWithdraw {
+#btnDeposit {
   color: #000;
   background-color: #f7c107;
   border-color: transparent;
@@ -57,7 +57,7 @@
   border-radius: 5px;
 }
 
-#btnWithdraw:focus {
+#btnDeposit:focus {
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;

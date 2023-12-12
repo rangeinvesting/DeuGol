@@ -1,0 +1,30 @@
+<aside id="WithdrawCard" class="widget widget--sidebar bg-gradient widget-standings unselectable" *ngIf="paymentSettingsLoaded">
+	<div class="widget__content card__content">
+		<h6 class="title">
+			Método de saque
+		</h6>
+		<div>
+			<button class="btn-method pix" (click)="selectWithdrawMethod('pix')" [ngClass]="{'btn-method-selected': method === 'pix' }">Saque via Pix</button>
+		</div>
+	<h3 class="balance">
+		</h3>
+		<div *ngIf="method">
+		<h6 class="title">
+			Insira o valor
+		</h6>
+		<div><input type="tel" class="amount-input" [(ngModel)]="amount" currencyMask [options]="{ align: 'left', prefix: 'R$ ', thousands: '.', decimal: ',' }" (keypress)="onKeypressEvent($event)" /></div>
+		<div class="row" id="actions">
+				<div class="col-12">
+					<button class="btn btn-default btn-sm" id="btnWithdraw" (click)="initWithdraw()">
+						Sacar
+					</button>
+				</div>
+			</div>
+	<div class="balance-card-bottom">
+		<h6 class="sub-title">
+			Valores mínimos e máximos de saque: <br><b>{{ minWithdrawAmount | currency:"BRL" }}/{{ maxWithdrawAmount | currency:"BRL" }}</b>
+		</h6>
+	</div>
+	</div>
+</div>
+</aside>
